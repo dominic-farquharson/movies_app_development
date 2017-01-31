@@ -7,9 +7,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 require('dotenv').config();
-
+const session = require('express-session');
+var passport = require('passport');
 var index = require('./routes/index');
+
+
 var movies = require('./routes/movies');
+
+
+var userRoutes = require('./routes/user.js');
+var authRoutes = require('./routes/auth.js');
 
 var app = express();
 
@@ -26,6 +33,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(passport.initialize());
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -34,8 +42,22 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({  // session allows you to read global env variables
+ secret: process.env.SECRET_KEY, // secret key from env
+ resave: false,
+ saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', index);
+
 app.use('/movies', movies);
+
+
+app.use('/user', userRoutes);
+app.use('/auth', authRoutes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
