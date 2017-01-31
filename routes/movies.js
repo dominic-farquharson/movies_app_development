@@ -47,5 +47,20 @@ router.put('/:id', function(req, res, next) {
   });
 });
 
+// create new movies - page
+router.get('/new', (req, res, next) => {
+  res.render('./movies/new')
+});
+
+// posting a new movie
+router.post('/', function(req, res, next) {
+  models.Movie.create({
+    title: req.body.title,
+    synopsis: req.body.synopsis
+  }).then(function() {
+    res.redirect('/')
+  });
+});
+
 
 module.exports = router;
