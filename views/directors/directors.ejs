@@ -7,12 +7,11 @@
   <body>
     <h1><%= title %></h1>
 
-
-    <% directors.forEach(function(director) {%>
+          <% directors.forEach(function(director) {%>
      <div>
-       <%=director.name%>
+         <%=director.name%><a href="<%=`/directors/${director.id}`%>">View Director's Page</a>
      </div>
-
+      </br>
    <% }); %>
   </body>
 </html>
