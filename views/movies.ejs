@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <% include partials/head.ejs %>
+  <% include partials/header.ejs %>
+  <body>
+    <h1><%= title %></h1>
+    <div class="movies">
+      <% movies.forEach(function(movie) { %>
+        <div>
+            <span><%= movie.title %></span>
+            <div><a class="waves-effect waves-light blue btn" href="/movies/<%= movie.id %>">View</a></div>
+        </div>
+      <% }) %>
+    </div>
+    <div style="width:250px; margin:0 auto;">
+      <a class="newButton waves-effect waves-light blue btn" href="/new">Create a new movie</a>
+    </div>
+
+  </body>
+</html>

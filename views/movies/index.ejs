@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <% include ../partials/head.ejs %>
+    <% include ../partials/header.ejs %>
+    <main>
+      <div class="container">
+        <div>
+          <h1><%= movies.title %></h1>
+          <p><%= movies.synopsis %></p>
+
+        </div>
+        <form action="<%=`/movies/${movies.id}?_method=DELETE` %>" method="POST">
+          <button class="waves-effect waves-light red btn">Delete</button>
+        </form>
+        <div>
+          <a class="waves-effect waves-light blue btn" href="<%= `./${movies.id}/edit`%>" >Edit</a>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>
