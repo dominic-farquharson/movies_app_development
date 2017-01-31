@@ -7,6 +7,8 @@
   <body>
     <h1><%= title %></h1>
 
+     <a href="/directors/new">Add a new Director</a>
+
           <% directors.forEach(function(director) {%>
      <div>
          <%=director.name%><a href="<%=`/directors/${director.id}`%>">View Director's Page</a>

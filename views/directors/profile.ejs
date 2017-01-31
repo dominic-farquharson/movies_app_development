@@ -9,14 +9,20 @@
   <body>
     <h1><%= title %> of <%=director.name%></h1>
 
-
+    <h1><%=director.name%></h1>
      <div>
-       <form action=`/directors/${director.id}?_method" method="POST" >
-            <h1><%=director.name%></h1>
+       <form action="<%=`/directors/${director.id}?_method=DELETE`%> " method="POST" >
             <button class="btn btn-danger btn-sm">
                  <i class="fa fa-trash-o fa-lg"></i>Delete
             </button>
        </form>
+
+       <a href="<%= `/directors/${director.id}/edit`%>">Edit</a>
+
+
+
+
+
      </div>
 
 
