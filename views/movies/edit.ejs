@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
+  <% include ../partials/head.ejs %>
+  <% include ../partials/header.ejs %>
 
-  <link rel='stylesheet' href='/stylesheets/style.css'>
-</head>
-<body>
-  <h1>Edit Movie</h1>
-  <form action="<%= `/movies/${movies.id}?_method=POST` %>" method="POST">
-    <label>
-      Title
-      <input name="title" />
-    </label>
-    <label>
-      Synopsis
-      <input name="synopsis" />
-    </label>
-    <input type="submit" value="Submit movie" />
-  </form>
+  <body>
+    <h1 class="align">Edit Movie</h1>
+    <form action="<%= `/movies/${movies.id}?_method=PUT` %>" method="POST">
+      <label>
+        Title
+        <input name="title" />
+      </label>
+      <label>
+        Synopsis
+        <input name="synopsis" />
+      </label>
+      <input class="waves-effect waves-light blue btn" type="submit" value="Submit movie" />
+    </form>
 
-</body>
+  </body>
+</html>

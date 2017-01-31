@@ -1,6 +1,7 @@
 <html>
   <body>
-
+    <% include ../partials/head.ejs %>
+    <% include ../partials/header.ejs %>
     <main>
       <div class="container">
         <div>
@@ -9,13 +10,10 @@
 
         </div>
         <form action="<%=`/movies/${movies.id}?_method=DELETE` %>" method="POST">
-          <button>Delete</button>
+          <button class="waves-effect waves-light red btn">Delete</button>
         </form>
         <div>
-          <a href="<%= `./${movies.id}/edit`%>" >Edit</a>
-        </div>
-        <div>
-          <a href="/auth/logout">LOG OUT</a>
+          <a class="waves-effect waves-light blue btn" href="<%= `./${movies.id}/edit`%>" >Edit</a>
         </div>
       </div>
     </main>
