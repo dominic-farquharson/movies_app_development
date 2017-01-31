@@ -35,8 +35,17 @@ router.delete('/:id', function(req, res, next) {
   });
 });
 
+// put edited movies
 
+router.put('/:id', function(req, res, next) {
+  models.Movie.update({
+    title: req.body.title,
+    synopsis: req.body.synopsis
 
+  }, { where: { id: req.params.id } }).then(function() {
+    res.redirect('/movies/' + req.params.id);
+  });
+});
 
 
 module.exports = router;

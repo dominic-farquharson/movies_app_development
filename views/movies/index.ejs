@@ -11,7 +11,12 @@
         <form action="<%=`/movies/${movies.id}?_method=DELETE` %>" method="POST">
           <button>Delete</button>
         </form>
-        <a href="/auth/logout">LOG OUT</a>
+        <div>
+          <a href="<%= `./${movies.id}/edit`%>" >Edit</a>
+        </div>
+        <div>
+          <a href="/auth/logout">LOG OUT</a>
+        </div>
       </div>
     </main>
 
