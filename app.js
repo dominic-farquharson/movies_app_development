@@ -1,16 +1,27 @@
 var express = require('express');
 var path = require('path');
+
 // var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 require('dotenv').config();
 const session = require('express-session');
 var passport = require('passport');
 var index = require('./routes/index');
+
+
+var movies = require('./routes/movies');
+
+
 var userRoutes = require('./routes/user.js');
 var authRoutes = require('./routes/auth.js');
+
 var app = express();
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,8 +51,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', index);
+
+app.use('/movies', movies);
+
+
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

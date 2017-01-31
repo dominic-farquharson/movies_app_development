@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include ../partials/head.ejs %>
+  <% include ../partials/header.ejs %>
+
+  <body>
+    <h1 class="align">Edit Movie</h1>
+    <form action="<%= `/movies/${movies.id}?_method=PUT` %>" method="POST">
+      <label>
+        Title
+        <input name="title" />
+      </label>
+      <label>
+        Synopsis
+        <input name="synopsis" />
+      </label>
+      <input class="waves-effect waves-light blue btn" type="submit" value="Submit movie" />
+    </form>
+
+  </body>
+</html>
