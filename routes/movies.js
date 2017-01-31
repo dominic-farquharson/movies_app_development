@@ -19,6 +19,24 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+/* get movies id - edit */
+router.get('/:id/edit', function(req, res, next) {
+  models.Movie.findById(req.params.id).then(function(movies) {
+    res.render('./movies/edit', { movies: movies });
+  });
+});
+
+/* Delete a movie */
+router.delete('/:id', function(req, res, next) {
+  models.Movie.destroy({
+    where: { id: req.params.id }
+  }).then(function(movies) {
+    res.redirect('/movies');
+  });
+});
+
+
+
 
 
 module.exports = router;
