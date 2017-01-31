@@ -1,2 +1,24 @@
+.movies > div {
+  font-size: 1.5em;
+  margin: 20px 0px;
+  position: relative;
+  width: 70%; }
+
+.movies {
+  border: 1px black solid;
+  width: 70%;
+  margin: 0 auto;
+  height: 400px;
+  overflow: scroll; }
+
+.newButton {
+  position: relative;
+  margin-top: 100px; }
+
+h1 {
+  text-align: center; }
+
+.align {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

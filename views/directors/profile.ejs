@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <h1><%= title %> of <%=director.name%></h1>
+
+    <h1><%=director.name%></h1>
+     <div>
+       <form action="<%=`/directors/${director.id}?_method=DELETE`%> " method="POST" >
+            <button class="btn btn-danger btn-sm">
+                 <i class="fa fa-trash-o fa-lg"></i>Delete
+            </button>
+       </form>
+
+       <a href="<%= `/directors/${director.id}/edit`%>">Edit</a>
+
+
+
+
+
+     </div>
+
+
+  </body>
+</html>
