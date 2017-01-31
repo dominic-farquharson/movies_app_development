@@ -26,6 +26,12 @@ function loginRequired(req, res, next) {
   return next();
 }
 
+function loginRedirect(req, res, next) {
+  if (req.user) res.redirect('/user');
+
+  return next();
+}
+
 module.exports = {
   comparePass,
   loginRedirect,
