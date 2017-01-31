@@ -8,8 +8,8 @@ var methodOverride = require('method-override')
 require('dotenv').config();
 
 var index = require('./routes/index');
-var users = require('./routes/users');
-//var movies = require('./routes/movies');
+//var users = require('./routes/users');
+
 var directors = require('./routes/directors');
 
 var app = express();
@@ -33,7 +33,7 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+//app.use('/users', users);
 app.use('/directors', directors);
 
 // catch 404 and forward to error handler
