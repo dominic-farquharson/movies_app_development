@@ -22,13 +22,11 @@ function createUser(req, res) {
 
 function loginRequired(req, res, next) {
   if (!req.user) res.redirect('/auth/login');
-
   return next();
 }
 
 function loginRedirect(req, res, next) {
   if (req.user) res.redirect('/user');
-
   return next();
 }
 
