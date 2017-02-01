@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+
+  <% include ../partials/head2.ejs %>
+
+  <% include ../partials/header.ejs %>
+
   <body>
-    <h1><%= title %></h1>
 
-     <a href="/directors/new">Add a new Director</a>
-
+  <h1><%= title %></h1>
+   <div class="wrapper">
+        <div>
           <% directors.forEach(function(director) {%>
-     <div>
-         <%=director.name%><a href="<%=`/directors/${director.id}`%>">View Director's Page</a>
-     </div>
-      </br>
-   <% }); %>
+                  <div>
+                      <h4><%=director.name%></h4>
+                      <a class="waves-effect waves-light blue btn" href="<%=`/directors/${director.id}`%>">View Director's Page</a>
+                  </div>
+                  </br>
+           <% }); %>
+          </div>
+   </div>
+
+    <div class="midbutton">
+       <a class="newButton waves-effect waves-light blue btn" href="/directors/new">Add a new Director</a>
+    </div>
+
   </body>
 </html>

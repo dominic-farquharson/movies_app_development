@@ -1,15 +1,28 @@
+html {
+  box-sizing: border-box; }
+
+.movies, .wrapper {
+  border: 3px black solid;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 5px 5px #888888;
+  text-align: center;
+  margin: 0 auto;
+  height: 300px;
+  overflow: scroll; }
+
 .movies > div {
   font-size: 1.5em;
-  margin: 20px 0px;
-  position: relative;
-  width: 70%; }
-
-.movies {
-  border: 1px black solid;
-  width: 70%;
+  /*margin:20px 0px;*/
   margin: 0 auto;
-  height: 400px;
-  overflow: scroll; }
+  position: relative;
+  width: 80%; }
+
+.wrapper > div {
+  font-size: 1.5em;
+  margin: 0 auto;
+  position: relative;
+  width: 80%; }
 
 .newButton {
   position: relative;
@@ -20,5 +33,22 @@ h1 {
 
 .align {
   text-align: center; }
+
+.midbutton {
+  width: 250px;
+  margin: 0 auto; }
+
+body, html {
+  min-height: 50%;
+  height: 50%; }
+
+body {
+  margin: 0;
+  color: #ececec;
+  line-height: 2;
+  background-image: url("../images/3dscreen.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center; }
 
 /*# sourceMappingURL=style.css.map */
