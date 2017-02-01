@@ -1,9 +1,11 @@
 <html>
-  <body>
-    <% include ../partials/head.ejs %>
+  <% include ../partials/head.ejs %>
     <% include ../partials/header.ejs %>
+
+  <body>
+
     <main>
-      <div class="container">
+
         <div>
           <h1><%= movies.title %></h1>
           <p><%= movies.synopsis %></p>
@@ -15,7 +17,7 @@
         <div>
           <a class="waves-effect waves-light blue btn" href="<%= `./${movies.id}/edit`%>" >Edit</a>
         </div>
-      </div>
+
     </main>
 
   </body>
